@@ -1,0 +1,23 @@
+#!/bin/bash
+#demo of a message box with an OK button
+set -x
+MSGBOX=${MSGBOX=dialog}
+TITLE="Default"
+MESSAGE="Some Message"
+XCOORD=10
+YCOORD=20
+#diplay the message box wit our message
+funcDisplayMgsBox () { 
+ $MSGBOX --title "$1" --msgbox "$2" "$3" "$4"
+}
+#script - start
+if [ "$1" == "shutdown" ]; then
+  funcDisplayMgsBox "WARNING!" "Please press OK when you are ready to shut down the system" "10" "20"
+  echo "SHUTTING DOWN NOW!!!"
+else
+ funcDisplayMgsBox "Boring..." "You are not asking for anything fun..." "10" "20"
+ echo "Not doing anything, back to regular scripting..."
+fi
+
+
+
