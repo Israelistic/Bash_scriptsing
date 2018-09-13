@@ -1,1 +1,1 @@
-# Bash_scriptsing
+# Bash Scripts examples
